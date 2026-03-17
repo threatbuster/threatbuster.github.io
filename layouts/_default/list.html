@@ -1,0 +1,69 @@
+{{- define "main" }}
+
+{{- if (and site.Params.profileMode.enabled .IsHome) }}
+    {{- partial "index_profile.html" . }}
+{{- else }}
+
+<header class="page-header">
+    {{- partial "breadcrumbs.html" . }}
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+</header>
+
+{{- /* --- AGGIUNTO: Visualizza il contenuto di _index.md --- */ -}}
+{{- if .Content }}
+<div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}
+        {{ .Content }}
+    {{- end }}
+</div>
+{{- end }}
+{{- /* ---------------------------------------------------- */ -}}
+
+{{- $pages := union .RegularPages .Sections }}
+{{- if .IsHome }}
+    {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
+{{- end }}
+
+{{- $paginator := .Paginate $pages }}
+
+<div class="post-feed">
+{{- range $index, $page := $paginator.Pages }}
+    <article class="post-entry post-card">
+        <div class="post-card-inner">
+            <header class="entry-header">
+                <h2>{{ .Title }}</h2>
+            </header>
+            {{- if (ne (.Param "hideSummary") true) }}
+            <div class="entry-content">
+                <p>
+                    {{- if .Description -}}
+                        {{ .Description | markdownify }}
+                    {{- else -}}
+                        {{ .Summary | plainify | htmlUnescape | truncate 200 }}
+                    {{- end -}}
+                </p>
+            </div>
+            {{- end }}
+            {{- if not (.Param "hideMeta") }}
+            <footer class="entry-footer">
+                {{- partial "post_meta.html" . -}}
+            </footer>
+            {{- end }}
+        </div>
+        <a class="entry-link" href="{{ .Permalink }}"></a>
+    </article>
+{{- end }}
+</div>
+
+{{- end }}{{/* end profileMode */}}
+{{- end }}{{/* end main */}}
+
+

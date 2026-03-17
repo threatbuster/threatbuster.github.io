@@ -1,0 +1,39 @@
+<footer class="footer">
+    {{- if .Site.Copyright }}
+    <span>{{ .Site.Copyright | safeHTML }}</span>
+    {{- else }}
+    <span>&copy; {{ now.Year }} {{ .Site.Title }}</span>
+    {{- end }}
+    <span>
+        · Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const themeToggle = document.getElementById("theme-toggle");
+        
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const htmlTag = document.querySelector("html");
+                
+                // Se è dark, passa a light
+                if (htmlTag.dataset.theme === "dark" || htmlTag.classList.contains("dark")) {
+                    htmlTag.dataset.theme = "light";
+                    htmlTag.classList.remove("dark");
+                    htmlTag.classList.add("light");
+                    localStorage.setItem("pref-theme", "light");
+                } 
+                // else, passa a dark
+                else {
+                    htmlTag.dataset.theme = "dark";
+                    htmlTag.classList.remove("light");
+                    htmlTag.classList.add("dark");
+                    localStorage.setItem("pref-theme", "dark");
+                }
+            });
+        }
+    });
+</script>

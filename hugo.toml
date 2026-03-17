@@ -1,0 +1,87 @@
+baseURL = 'https://threatbuster.github.io/'
+languageCode = 'en-us'
+title = 'ThreatBusters'
+theme = 'PaperMod'
+copyright = '© 2026 ThreatBusters | Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>' 
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+[params]
+    env = "production"
+    title = "ThreatBusters"
+    description = "Advanced Threat Hunting & Cyber Intelligence"
+    author = "ThreatBuster"
+
+    # --- LOOK & FEEL ---
+    defaultTheme = "dark"
+    disableThemeToggle = false
+    
+    # --- UI SETTINGS ---
+    ShowCodeCopyButtons = true
+    ShowReadingTime = true
+    ShowBreadCrumbs = true
+    ShowPostNavLinks = false
+    ShowToc = true
+
+    # --- ASSETS & FAVICON ---
+    [params.assets]
+        favicon = "/favicon.ico"
+        favicon16x16 = "/favicon-16x16.png"
+        favicon32x32 = "/favicon-32x32.png"
+        apple_touch_icon = "/apple-touch-icon.png"
+
+    # --- HOME PAGE (Profile Mode) ---
+    [params.profileMode]
+        enabled = true
+        title = "ThreatBusters"
+        subtitle = "Hunting threats before they hunt you."
+        
+        [[params.profileMode.buttons]]
+            name = "Fundamentals"
+            url = "fundamentals"
+        [[params.profileMode.buttons]]
+            name = "Let's hunt!"
+            url = "posts"
+
+
+    # --- SOCIAL ICONS ---
+    #[[params.socialIcons]]
+    #    name = "x"
+    #    url = "https://x.com/"
+
+    #[[params.socialIcons]]
+    #    name = "reddit"
+    #    url = "https://www.reddit.com/user/"
+    
+    [[params.socialIcons]]
+        name = "linkedin"
+        url = "https://www.linkedin.com/in/alessio-migliore-80a3a2197/"
+
+# --- MENU DI NAVIGAZIONE ---
+[[menu.main]]
+    name = "Fundamentals"
+    url = "/fundamentals/"
+    weight = 10
+
+[[menu.main]]
+    name = "Archive"
+    url = "/posts/"
+    weight = 20
+
+[[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 30
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 40
+
+
