@@ -49,16 +49,6 @@ copyright = '© 2026 ThreatBusters | Licensed under <a href="https://creativecom
             name = "Let's hunt!"
             url = "posts"
 
-
-    # --- SOCIAL ICONS ---
-    #[[params.socialIcons]]
-    #    name = "x"
-    #    url = "https://x.com/"
-
-    #[[params.socialIcons]]
-    #    name = "reddit"
-    #    url = "https://www.reddit.com/user/"
-    
     [[params.socialIcons]]
         name = "linkedin"
         url = "https://www.linkedin.com/in/alessio-migliore-80a3a2197/"
