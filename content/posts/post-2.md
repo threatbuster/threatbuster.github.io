@@ -1,5 +1,5 @@
 ---
-title: "Malicious Browser Extensions Targeting AI Tools"
+title: "Malicious browser extensions targeting AI tools"
 date: 2026-01-15T12:00:00Z
 description: "Analysis of malicious Chrome extensions abusing AI tools to steal user data and AI conversations, including detection techniques and KQL hunting queries using Microsoft Defender telemetry."
 categories: ["Endpoint Security", "Threat Intelligence"]

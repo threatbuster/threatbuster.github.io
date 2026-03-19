@@ -1,5 +1,5 @@
 ---
-title: "Practical Guides"
-description: "Explore in-depth, hands-on guides for starting and managing Threat Hunting processes across various scenarios and environments."
+title: "Threat Hunting in the Wild"
+description: "Hands-on threat hunting guides based on real-world campaigns, covering latest attacker techniques, detection strategies, and practical investigations across modern environments."
 layout: "list"
 ---

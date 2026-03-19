@@ -1,5 +1,5 @@
 ---
-title: "XWorm RAT in the Wild: Phishing Delivery, ClickFix abuse and KQL hunting"
+title: "XWorm RAT in the Wild: Phishing delivery, ClickFix abuse and KQL hunting"
 date: 2025-12-15T10:00:00Z
 description: "Technical analysis of XWorm RAT campaigns delivered via phishing, Prometheus TDS and ClickFix techniques, with practical KQL hunting queries for Microsoft Defender and Sentinel."
 categories: ["Malware Analysis", "Endpoint Hunting"]
